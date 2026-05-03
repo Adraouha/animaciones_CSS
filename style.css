@@ -281,7 +281,7 @@ main {
 
 .ad-image-container {
     width: 50%;
-    background-image: url("/logo.png");
+    background-image: url("logo.PNG");
     background-size: cover;
     background-position: center;
     font-size: 3rem;
