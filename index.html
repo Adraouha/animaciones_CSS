@@ -12,16 +12,26 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <h1>Animaciones CSS</h1>
         <p>Ejercicios sobre @keyframes, transiciones y efectos visuales modernos.</p>
-        <a href="ejercicio1.html">Está es una tarea para practicar transform y keyframes</a>
+        <a href="ejercicio1.html">Pulsa aquí para ir a una tarea de transform y keyframes</a>
+
+        <!-- Lista de ejercicios -->
+        <div class="lista-ejercicios">
+            <h4>Ejercicios</h4>
+            <ul>
+                <li><a href="#ejercicio1">Ejercicio 1</a></li>
+                <li><a href="#ejercicio2">Ejercicio 2</a></li>
+                <li><a href="#ejercicio3">Ejercicio 3</a></li>
+            </ul>
+        </div>
 
     </header>
 
     <main>
         <!-- Ejercicio 1: de un cuadrado a un circulo  -->
-        <section class="ejercicio" id="cuadrado-a-circulo-id">
+        <section class="ejercicio" id="ejercicio1">
             <h2>1. De Cuadrado a Círculo</h2>
             <p>Pasa el ratón por encima de la forma.</p>
             <div class="container">
@@ -30,7 +40,7 @@
         </section>
 
         <!-- Ejercicio 2: Animacion de pelota  -->
-        <section class="ejercicio" id="pelota_rebota">
+        <section class="ejercicio" id="ejercicio2">
             <h2>2. Animación Pelota</h2>
             <p>Pelota rebotando verticalmente</p>
             <div class="container ball-container">
@@ -41,12 +51,12 @@
         </section>
 
         <!-- Ejercicio 3: Animacion de anuncio  -->
-        <section class="ejercicio" id="animacion_anuncio">
-            <h2>3. Animación Anuncio</h2>
+        <section class="ejercicio" id="ejercicio3">
+            <h2>3. Animación de anuncio</h2>
             <p>Anuncio de IronHack - Animaciones de textos, imagenes con efectos visuales</p>
             <div class="ad-banner">
                 <div class="ad-bg"></div>
-                <div class="ad-logo">Quieres ser Desarrollador Web?</div>
+                <div class="ad-logo">¿Quieres ser <strong>Desarrollador</strong> Web?</div>
                 <div class="ad-slogan">IronHack es tu lugar, no dejes escapar esta oportunidad.</div>
                 <div class="ad-image-container">
                     <div class="logo-ironhack"></div>
@@ -54,6 +64,7 @@
                 </div>
             </div>
         </section>
+        <a href="#header">Suba a la parte superior de la página</a>
     </main>
 
     <footer>
