@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hassan Adraou - Usos de transform y keyframes</title>
+</head>
+<style>
+    body {
+        background-color: #0f172a;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        border: 2px solid white;
+        width: 50%;
+        background-color: #000000;
+
+    }
+
+    .header h1 {
+        margin-bottom: 20px;
+        align-self: auto;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 2em;
+        color: #00aeff;
+        text-shadow: 0 0 30px #ffa500;
+    }
+
+    .header p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #f8b408;
+    }
+
+    .header:hover {
+        box-shadow: 0 0 30px #18c1d1;
+    }
+
+    .header h1:hover,
+    .header p:hover {
+        color: #faf8f8;
+
+    }
+
+    .contenedor-animacion {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 20px;
+    }
+
+    .contenedor1,
+    .contenedor2,
+    .contenedor3,
+    .contenedor4 {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 20px;
+    }
+
+    .tarjeta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        background-color: #3f3c3d;
+        transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 0 30px #36d8e0;
+        animation: alternar 2s infinite linear;
+        border-radius: 0%;
+
+    }
+
+    @keyframes alternar {
+        0% {
+            background-color: #470b1f;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+
+        }
+
+        50% {
+            background-color: #04193f;
+            border-radius: 100%;
+            border: 2px solid rgb(255, 255, 255);
+            box-shadow: 0 0 30px #18aeb6;
+
+        }
+
+        100% {
+            background-color: #730a7a;
+            border-radius: 50%;
+            border: 2px solid rgb(250, 250, 250);
+            box-shadow: 0 0 30px #d16208;
+
+        }
+
+    }
+
+    .tarjeta2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        background-color: #b30b43;
+        transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 0 30px #28e036;
+        animation: alternar2 2s infinite linear;
+        border-radius: 0%;
+
+
+    }
+
+    @keyframes alternar2 {
+        0% {
+            background-color: #c403cb;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+
+        }
+
+        25% {
+            background-color: #6a246c;
+            border-radius: 75%;
+            border: 2px solid rgb(255, 255, 255);
+            box-shadow: 0 0 30px #f86e0c;
+
+        }
+
+        50% {
+            background-color: #660d74;
+            border-radius: 100%;
+            border: 2px solid rgb(252, 251, 251);
+            box-shadow: 0 0 30px #33f80c;
+        }
+
+        100% {
+            background-color: #37153a;
+            border-radius: 75%;
+            border: 2px solid rgb(255, 255, 255);
+            box-shadow: 0 0 30px #5205e1;
+        }
+
+    }
+
+
+
+    .caja {
+        width: 100%;
+        height: 100%;
+        background-image: url("ADR ANIME.png");
+        background-size: cover;
+        background-position: center;
+        border: 2px solid white;
+        box-shadow: 0 0 30px #18c1d1;
+        animation: imagen-girar 2s infinite linear;
+        border-radius: 0%;
+
+    }
+
+    .caja2 {
+        width: 100%;
+        height: 100%;
+        background-image: url("ADR ANIME2.png");
+        background-size: cover;
+        background-position: center;
+        border: 2px solid white;
+        box-shadow: 0 0 50px #e20687;
+        animation: imagen-girar 2s infinite linear;
+        border-radius: 0%;
+
+    }
+
+
+
+    @keyframes imagen-girar {
+        0% {
+            transform: scale(0);
+            border-radius: 25%;
+            border: 3px solid rgb(250, 249, 249);
+        }
+
+
+        50% {
+            transform: scale(0.5);
+            border-radius: 50%;
+            border: 3px solid rgb(250, 249, 249);
+        }
+
+        100% {
+            transform: scale(1);
+            border-radius: 100%;
+            border: 3px solid rgb(250, 249, 249);
+        }
+
+    }
+
+    .caja:hover {
+        transform: rotate(360deg);
+        box-shadow: 0 0 30px #18c1d1;
+        animation: rotate360 2s infinite linear;
+        border-radius: 50%;
+        border: 3px solid rgb(246, 10, 10);
+    }
+
+    @keyframes rotate360 {
+        from {
+            transform: rotate(0deg);
+            border-radius: 0%;
+        }
+
+        to {
+            transform: rotate(360deg);
+            border-radius: 100%;
+        }
+    }
+
+    .caja2:hover {
+        transform: rotate(360deg);
+        box-shadow: 0 0 30px #18c1d1;
+        animation: rotate-360 2s infinite linear;
+        border: 3px solid rgb(45, 246, 10);
+        border-radius: 50%;
+    }
+
+    @keyframes rotate-360 {
+        from {
+            transform: rotate(360deg);
+            border-radius: 0%;
+        }
+
+        to {
+            transform: rotate(0deg);
+            border-radius: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="header">
+        <h1>Animaciones CSS</h1>
+        <p><strong>Hassan Adraou</strong> - Usos de transform y keyframes</p>
+    </div>
+
+    <div class="contenedor-animacion">
+
+
+
+        <div class="contenedor1">
+
+            <div class="tarjeta">
+                <div class="caja"> </div>
+            </div>
+
+            <div class="tarjeta2">
+                <div class="caja2"> </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="contenedor2">
+
+            <div class="tarjeta">
+                <div class="caja"> </div>
+            </div>
+
+            <div class="tarjeta2">
+                <div class="caja2"> </div>
+            </div>
+            <div class="tarjeta">
+                <div class="caja"> </div>
+            </div>
+
+            <div class="tarjeta2">
+                <div class="caja2"> </div>
+            </div>
+
+
+        </div>
+
+        <div class="contenedor3">
+
+            <div class="tarjeta">
+                <div class="caja"> </div>
+            </div>
+
+            <div class="tarjeta2">
+                <div class="caja2"> </div>
+            </div>
+            <div class="tarjeta">
+                <div class="caja"> </div>
+            </div>
+
+            <div class="tarjeta2">
+                <div class="caja2"> </div>
+            </div>
+
+
+        </div>
+
+        <div class="contenedor4">
+
+            <div class="tarjeta">
+                <div class="caja"> </div>
+            </div>
+
+            <div class="tarjeta2">
+                <div class="caja2"> </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

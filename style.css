@@ -1,0 +1,389 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --accent-color: #38bdf8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+a {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: #ff0000;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    gap: 2rem;
+}
+
+.ejercicio {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ejercicio h2 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.ejercicio p {
+    margin-bottom: 2rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.container {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Ejercicio 1: de un cuadrado a un circulo  */
+.cuadrado-a-circulo {
+    width: 150px;
+    height: 150px;
+    background-color: #f43f5e;
+    border-radius: 0%;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 30px rgba(244, 63, 94, 0.3);
+}
+
+.cuadrado-a-circulo:hover {
+    border-radius: 50%;
+    background-color: #38bdf8;
+    transform: rotate(360deg);
+    box-shadow: 0 0 50px rgba(56, 189, 248, 0.5);
+}
+
+/* Ejercicio 2: Animacion de pelota  */
+.pelota_rebota {
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+.ball {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 50% 30%, #3354d6, #3578d6);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    animation: bounce 0.5s infinite alternate cubic-bezier(0.5, 0.05, 1, 0.5);
+    z-index: 2;
+    box-shadow: inset -5px -5px 15px rgba(244, 243, 243, 0.3);
+}
+
+.ground {
+    width: 100%;
+    height: 10px;
+    background: #2569c9;
+    position: absolute;
+    bottom: 0;
+}
+
+.shadow {
+    width: 60px;
+    height: 10px;
+    background: #1b1515;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+    animation: shadow-scale 0.5s infinite alternate cubic-bezier(0.5, 0.05, 1, 0.5);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-300px) scale(1, 1);
+    }
+
+    90% {
+        transform: translateY(-100px) scale(1, 1);
+
+    }
+
+    100% {
+        transform: translateY(0) scale(1.02, 0.8);
+
+
+    }
+}
+
+@keyframes shadow-scale {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0.6;
+    }
+}
+
+/* Task 3: Banner Ad */
+.ad-banner {
+    width: 100%;
+    height: 250px;
+    background: #000;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #1e8ce4;
+}
+
+.ad-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #192832, #000000);
+    z-index: 1;
+}
+
+.ad-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    z-index: 2;
+    opacity: 0;
+    transform: scale(0);
+    animation: logo-entry 2s forwards 2s linear infinite;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.ad-slogan {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1e8ce4;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    z-index: 2;
+    opacity: 0;
+    margin-top: 0.5rem;
+    animation: slogan-entry 2s forwards 2s linear infinite;
+}
+
+.ad-image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.logo-ironhack-blob {
+
+    width: 100px;
+    height: 100px;
+    background: #3498db;
+    clip-path:
+        polygon(25% 0%,
+            75% 0%,
+            100% 50%,
+            75% 100%,
+            25% 100%,
+            0% 50%);
+    padding: 10px;
+    margin: 10px;
+    animation: ironhack-animate 3s infinite linear 1s;
+
+
+}
+
+.ad-image-container {
+    width: 50%;
+    background-image: url("logo-iron.png");
+    background-size: cover;
+    background-position: center;
+    font-size: 3rem;
+    position: absolute;
+    left: -100px;
+    z-index: 1;
+    background-color: #3498db;
+    transform: scale(0.5);
+    opacity: 0.7;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: ironhack-animate 4s infinite linear;
+}
+
+
+
+@keyframes logo-entry {
+    0% {
+        transform: scale(1) rotate(10deg);
+        color: #e60b0b;
+    }
+
+    10% {
+        transform: scale(1.2) rotate(-10deg);
+        color: #cf36c7;
+    }
+
+    30% {
+        transform: scale(1) rotate(10deg);
+        color: #1e8ce4;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(-10deg);
+        color: #68f523;
+    }
+
+    70% {
+        transform: scale(1.5) rotate(10deg);
+        color: #fbfbfb;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes slogan-entry {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+        color: #1e8ce4;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    25% {
+        transform: translateY(40px);
+        color: #cf36c7;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: translateY(20px);
+        color: #68f523;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    75% {
+        transform: translateY(10px);
+        color: #fbfbfb;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        color: #1e8ce4;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes ironhack-animate {
+    0% {
+        margin-left: -100px;
+        transform: scaleX(1);
+    }
+
+    50% {
+        margin-left: 100px;
+        transform: scaleX(1);
+    }
+
+    100% {
+        margin-left: 500px;
+        transform: scaleX(1);
+    }
+}
+
+footer {
+    margin-top: 4rem;
+    color: #1e8ce4;
+    font-size: 1.2rem;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    animation: color-animate 1s linear infinite;
+
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+@keyframes color-animate {
+    0% {
+        color: #1e8ce4;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    25% {
+        color: #5a36cf;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+
+    }
+
+    50% {
+        color: #cf36c7;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    75% {
+        color: #f93402;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    100% {
+        color: #ffffff;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+    }
+}
