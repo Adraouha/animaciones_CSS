@@ -269,25 +269,41 @@ main {
     padding: 10px;
     margin: 10px;
     animation: ironhack-animate 3s infinite linear 1s;
+    z-index: 1;
+    position: absolute;
+    opacity: 0.8;
+}
 
+.ad-cta {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
+.ad-cta a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
 }
 
 .ad-image-container {
     position: absolute;
     top: 0;
-    width: 50%;
+    left: 0;
+    width: 55%;
     height: 100%;
-    background-image: url("https://www.datocms-assets.com/14946/1669282262-global.png");
+    background-image: url("logo.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     font-size: 3rem;
-    left: -100px;
     z-index: 1;
     background-color: #3498db;
-    transform: scale(0.5);
-    opacity: 0.7;
+    transform: scale(0.8);
+    opacity: 0.4;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
     animation: ironhack-animate 4s infinite linear;
 }
